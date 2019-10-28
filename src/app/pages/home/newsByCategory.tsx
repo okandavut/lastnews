@@ -10,7 +10,7 @@ function useFilteredNews(category) {
             setFiltered(newsContent);
         }
         fetchData();
-    }, []);
+    }, [category]);
 
     return filteredNews;
 }
@@ -28,7 +28,8 @@ async function getNewsByCategory(category) {
 
 function NewsByCategory(props) {
     console.log("okan");
-    let filteredNews = useFilteredNews(props.category);
+    let filteredNews = [];
+    filteredNews = useFilteredNews(props.category);
     console.log(filteredNews);
     return (
         <>
