@@ -14,6 +14,8 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-hot-loader": "^4.6.5",
+    "style-loader": "^1.0.0",
+    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1"
   },
   "devDependencies": {
@@ -23,13 +25,18 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.29.3",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   },
