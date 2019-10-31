@@ -34,6 +34,7 @@ function Home(props) {
     let filteredNews = undefined;
 
     const [category, setCategory] = useState("");
+    const [country, setCountry] = useState("");
     return (
         <div style={{ padding: "3%" }}>
             <Grid columns={3} divided>
@@ -52,12 +53,14 @@ function Home(props) {
                     <GridColumn width={11}>
                         {category != "" ? <NewsByCategory category={category} /> : news != undefined ? <News newsList={news} /> : ""}
                     </GridColumn>
+                    {/* TODO- NEWS BY COUNTRY */}
                     <GridColumn width={3}>
-                        <p>Popüler Haberler</p>
+                    <p>Ülkeler</p>
                         <ul>
-                            <li>Şahika Ercümen dünya rekoru kırdı asker selamını çaktı - Internet Haber</li>
-                            <li>Böylesini evinize sakın sokmayın! Balıkta inanılmaz hile... - Hürriyet</li>
-                            <li>Ekonomik krizdeki Arjantin'de sandıktan sol çıktı - Gazete Duvar</li>
+                            <li onClick={() => { setCountry("tr") }}>Türkiye</li>
+                            <li onClick={() => { setCountry("abd") }}>Amerika</li>
+                            <li onClick={() => { setCountry("uk") }}>İngiltere</li>
+                            <li onClick={() => { setCountry("de") }}>Almanya</li>
                         </ul>
                     </GridColumn>
                 </Grid.Row>
