@@ -1,29 +1,19 @@
 import React from 'react';
+import { Card } from 'semantic-ui-react';
 
-import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, GridColumn, Card } from 'semantic-ui-react';
+import NewsBox from '../../components/NewsBox';
 
 function NewsList(props) {
-    let news = props.newsList.articles;
-    const listItems = news.map((d, index) => {
-        if (d.title != null && d.title != "" && d.description != null && d.description != "")
-            return (<Card key={d.author + index}>
-                <Card.Content header={d.title.trim()} />
-                <Card.Content description={d.description.trim()} />
-                <Card.Content extra>
-                    <a href={d.url} target="_blank"><Icon name='user' />Habere git</a>
-                </Card.Content>
-            </Card>
-            )
-    });
+    const { articles } = props.newsList;
+    const listItems = articles && articles.map((article, index) =>
+        <NewsBox article={article} key={index} />
+    );
+
     return (
-        <>
-            <Card.Group centered itemsPerRow={3}>
-                {listItems}
-            </Card.Group>
-        </>
+        <Card.Group centered itemsPerRow={3}>
+            {listItems}
+        </Card.Group>
     );
 }
 
-export {
-    NewsList as default,
-};
+export default NewsList;
