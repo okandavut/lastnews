@@ -1,39 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, GridColumn, Card } from 'semantic-ui-react';
-import News from './newsAll';
-import NewsByCategory from './newsByCategory';
+import React, { useState } from 'react';
+import { Grid, GridColumn } from 'semantic-ui-react';
 
-async function getAllNews() {
-    const apiKey = ''; // your api key
-    const country = 'tr';
-    const newsRequest = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`);
-    const newsContent = await newsRequest.json();
+import NewsList from '../../components/NewsList';
 
-    return newsContent;
-}
+function Home() {
+    const [category, setCategory] = useState();
 
-function useNews() {
-    const [news, setNews] = useState();
-
-    useEffect(() => {
-        async function fetchData() {
-            const newsContent = await getAllNews();
-            setNews(newsContent);
-        }
-        fetchData();
-    }, []);
-
-    return news;
-}
-
-
-
-
-function Home(props) {
-    let news = useNews();
-    let filteredNews = undefined;
-
-    const [category, setCategory] = useState("");
     return (
         <div style={{ padding: "3%" }}>
             <Grid columns={3} divided>
@@ -50,7 +22,7 @@ function Home(props) {
                         </ul>
                     </GridColumn>
                     <GridColumn width={11}>
-                        {category != "" ? <NewsByCategory category={category} /> : news != undefined ? <News newsList={news} /> : ""}
+                        <NewsList category={category} />
                     </GridColumn>
                     <GridColumn width={3}>
                         <p>Popüler Haberler</p>
