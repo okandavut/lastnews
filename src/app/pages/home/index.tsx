@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, GridColumn, Card } from 'semantic-ui-react';
+import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, GridColumn, Card, GridRow } from 'semantic-ui-react';
 import News from './newsAll';
 import NewsByCategory from './newsByCategory';
 
@@ -55,7 +55,7 @@ function Home(props) {
                     </GridColumn>
                     {/* TODO- NEWS BY COUNTRY */}
                     <GridColumn width={3}>
-                    <p>Ülkeler</p>
+                        <p>Ülkeler</p>
                         <ul>
                             <li onClick={() => { setCountry("tr") }}>Türkiye</li>
                             <li onClick={() => { setCountry("abd") }}>Amerika</li>
@@ -64,6 +64,11 @@ function Home(props) {
                         </ul>
                     </GridColumn>
                 </Grid.Row>
+                <GridRow>
+                    <GridColumn width={3}>
+                         <a href="https://newsapi.org/" target="_blank">Api from newsapi.org</a>
+                    </GridColumn>
+                </GridRow>
             </Grid>
         </div >
     );
