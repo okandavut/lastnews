@@ -9,10 +9,10 @@ function NewsList(props) {
     const newsBoxes = news && news.map((article, index) => <NewsBox article={article} key={index} />)
 
     useEffect(() => {
-        getNews(props.category).then(({articles}) => {
+        getNews(props.category, props.country).then(({articles}) => {
             setNews(articles);
         });
-    },[props.category]);
+    },[props.category, props.country]);
 
     
 

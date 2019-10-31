@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Grid, GridColumn } from 'semantic-ui-react';
+import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 
 import NewsList from '../../components/NewsList';
 import CategoryMenu from '../../components/CategoryMenu';
+import CountryMenu from '../../components/CountryMenu';
 
 function Home() {
     const [category, setCategory] = useState();
-    const [country, setCountry] = useState("");
+    const [country, setCountry] = useState();
 
     return (
         <div style={{ padding: "3%" }}>
@@ -16,17 +17,11 @@ function Home() {
                         <CategoryMenu setCategory={setCategory} />
                     </GridColumn>
                     <GridColumn width={11}>
-                        <NewsList category={category} />
+                        <NewsList category={category} country={country} />
                     </GridColumn>
                     {/* TODO- NEWS BY COUNTRY */}
                     <GridColumn width={3}>
-                        <p>Ülkeler</p>
-                        <ul>
-                            <li onClick={() => { setCountry("tr") }}>Türkiye</li>
-                            <li onClick={() => { setCountry("abd") }}>Amerika</li>
-                            <li onClick={() => { setCountry("uk") }}>İngiltere</li>
-                            <li onClick={() => { setCountry("de") }}>Almanya</li>
-                        </ul>
+                        <CountryMenu setCountry={setCountry} />
                     </GridColumn>
                 </Grid.Row>
                 <GridRow>
