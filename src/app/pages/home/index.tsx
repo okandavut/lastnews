@@ -4,8 +4,9 @@ import News from './newsAll';
 import NewsByCategory from './newsByCategory';
 
 async function getAllNews() {
-
-    const newsRequest = await fetch(`https://newsapi.org/v2/top-headlines?country=tr&apiKey=bb363c3dde344f10b3f6924860f2667f`);
+    const apiKey = ''; // your api key
+    const country = 'tr';
+    const newsRequest = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`);
     const newsContent = await newsRequest.json();
 
     return newsContent;
