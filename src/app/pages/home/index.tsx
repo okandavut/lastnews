@@ -5,6 +5,7 @@ import NewsList from '../../components/NewsList';
 
 function Home() {
     const [category, setCategory] = useState();
+    const [country, setCountry] = useState("");
 
     return (
         <div style={{ padding: "3%" }}>
@@ -24,15 +25,22 @@ function Home() {
                     <GridColumn width={11}>
                         <NewsList category={category} />
                     </GridColumn>
+                    {/* TODO- NEWS BY COUNTRY */}
                     <GridColumn width={3}>
-                        <p>Popüler Haberler</p>
+                        <p>Ülkeler</p>
                         <ul>
-                            <li>Şahika Ercümen dünya rekoru kırdı asker selamını çaktı - Internet Haber</li>
-                            <li>Böylesini evinize sakın sokmayın! Balıkta inanılmaz hile... - Hürriyet</li>
-                            <li>Ekonomik krizdeki Arjantin'de sandıktan sol çıktı - Gazete Duvar</li>
+                            <li onClick={() => { setCountry("tr") }}>Türkiye</li>
+                            <li onClick={() => { setCountry("abd") }}>Amerika</li>
+                            <li onClick={() => { setCountry("uk") }}>İngiltere</li>
+                            <li onClick={() => { setCountry("de") }}>Almanya</li>
                         </ul>
                     </GridColumn>
                 </Grid.Row>
+                <GridRow>
+                    <GridColumn width={3}>
+                         <a href="https://newsapi.org/" target="_blank">Api from newsapi.org</a>
+                    </GridColumn>
+                </GridRow>
             </Grid>
         </div >
     );
