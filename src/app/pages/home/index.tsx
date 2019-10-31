@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Grid, GridColumn } from 'semantic-ui-react';
 
 import NewsList from '../../components/NewsList';
+import CategoryMenu from '../../components/CategoryMenu';
 
 function Home() {
     const [category, setCategory] = useState();
@@ -11,15 +12,7 @@ function Home() {
             <Grid columns={3} divided>
                 <Grid.Row>
                     <GridColumn width={2}>
-                        <p>Kategoriler</p>
-                        <ul>
-                            <li onClick={() => { setCategory("business") }}>İş Dünyası</li>
-                            <li onClick={() => { setCategory("entertainment") }}>Eğlence</li>
-                            <li onClick={() => { setCategory("health") }}>Sağlık</li>
-                            <li onClick={() => { setCategory("science") }}>Bilim</li>
-                            <li onClick={() => { setCategory("sports") }}>Spor</li>
-                            <li onClick={() => { setCategory("technology") }}>Teknoloji</li>
-                        </ul>
+                        <CategoryMenu setCategory={setCategory} />
                     </GridColumn>
                     <GridColumn width={11}>
                         <NewsList category={category} />
