@@ -1,67 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, GridColumn, Card, GridRow } from 'semantic-ui-react';
-import News from './newsAll';
-import NewsByCategory from './newsByCategory';
+import React, { useState } from 'react';
+import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 
-async function getAllNews() {
-    const apiKey = ''; // your api key
-    const country = 'tr';
-    const newsRequest = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`);
-    const newsContent = await newsRequest.json();
+import NewsList from '../../components/NewsList';
+import CategoryMenu from '../../components/CategoryMenu';
+import CountryMenu from '../../components/CountryMenu';
 
-    return newsContent;
-}
+function Home() {
+    const [category, setCategory] = useState();
+    const [country, setCountry] = useState();
 
-function useNews() {
-    const [news, setNews] = useState();
-
-    useEffect(() => {
-        async function fetchData() {
-            const newsContent = await getAllNews();
-            setNews(newsContent);
-        }
-        fetchData();
-    }, []);
-
-    return news;
-}
-
-
-
-
-function Home(props) {
-    let news = useNews();
-    let filteredNews = undefined;
-
-    const [category, setCategory] = useState("");
-    const [country, setCountry] = useState("");
     return (
         <div style={{ padding: "3%" }}>
             <Grid columns={3} divided>
                 <Grid.Row>
                     <GridColumn width={2}>
-                        <p>Kategoriler</p>
-                        <ul>
-                            <li onClick={() => { setCategory("business") }}>İş Dünyası</li>
-                            <li onClick={() => { setCategory("entertainment") }}>Eğlence</li>
-                            <li onClick={() => { setCategory("health") }}>Sağlık</li>
-                            <li onClick={() => { setCategory("science") }}>Bilim</li>
-                            <li onClick={() => { setCategory("sports") }}>Spor</li>
-                            <li onClick={() => { setCategory("technology") }}>Teknoloji</li>
-                        </ul>
+                        <CategoryMenu setCategory={setCategory} />
                     </GridColumn>
                     <GridColumn width={11}>
-                        {category != "" ? <NewsByCategory category={category} /> : news != undefined ? <News newsList={news} /> : ""}
+                        <NewsList category={category} country={country} />
                     </GridColumn>
                     {/* TODO- NEWS BY COUNTRY */}
                     <GridColumn width={3}>
-                        <p>Ülkeler</p>
-                        <ul>
-                            <li onClick={() => { setCountry("tr") }}>Türkiye</li>
-                            <li onClick={() => { setCountry("abd") }}>Amerika</li>
-                            <li onClick={() => { setCountry("uk") }}>İngiltere</li>
-                            <li onClick={() => { setCountry("de") }}>Almanya</li>
-                        </ul>
+                        <CountryMenu setCountry={setCountry} />
                     </GridColumn>
                 </Grid.Row>
                 <GridRow>
