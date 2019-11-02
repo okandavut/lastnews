@@ -13,6 +13,10 @@ const categoriesArray = [
 const CountryMenuTitle = styled.h2`
   padding: 0;
   margin: 0 10px;
+
+  color: ${colors.themeBlack};
+  font-size: 21px;
+  font-weight: 500;
 `;
 
 const CountryMenuWrapper = styled.div`
@@ -26,7 +30,7 @@ const CountryMenuWrapper = styled.div`
 const CountryMenuItem = styled.a`
   padding: 10px 35px;
   margin: 0 10px;
-  border: 1px solid #ebebeb;
+  border: 1px solid ${colors.themeGrey};
 
   border-radius: 5px;
   background: ${(props: {isActive: boolean}) => props.isActive ? colors.themeGreen : 'transparent'};
@@ -35,7 +39,7 @@ const CountryMenuItem = styled.a`
   &:hover {
     cursor: pointer;
     color: ${(props: {isActive: boolean}) => props.isActive ? colors.themeWhite : colors.themeBlack};
-    background-color: ${(props: {isActive: boolean}) => props.isActive ? colors.themeGreen : '#f9f9f9'};
+    background-color: ${(props: {isActive: boolean}) => props.isActive ? colors.themeGreen : colors.themeButtonHoverBg};
     text-decoration: none;
   }
 `;

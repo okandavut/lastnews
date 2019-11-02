@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../utils/colors';
 
 const Card = styled.a`
-  width: 350px;
+  width: 400px;
   margin: 30px 15px;
   padding-bottom: 50px;
 
@@ -12,10 +12,7 @@ const Card = styled.a`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25), inset 0 -15px 40px rgba(0,0,0,0.1);
   overflow: hidden;
   position: relative;
-
-  &:hover {
-    text-decoration: none;
-  }
+  text-decoration: none;
 `;
 
 const CardImage = styled.div`
@@ -32,28 +29,33 @@ const CardContent = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  font-size: 25px;
+  font-size: 23px;
+  font-weight: 500;
   color: ${colors.themeBlack};
 `;
 
 const CardParagraph = styled.p`
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 0;
   color: ${colors.themeParagraphColor};
 `;
 
 const CardButton = styled.div`
+  width: 100%;
+  height: 50px;
+  padding: 15px 0;
+
   position: absolute;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 50px;
   bottom: 0;
 
-  padding: 15px 0;
   border-radius: 10px;
   font-size: 17px;
   color: ${colors.themeGreen};
   text-align: center;
+  line-height: 50px;
 `;
 
 const NewsBox = (props) =>
