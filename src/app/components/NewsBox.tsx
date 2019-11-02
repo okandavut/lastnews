@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../utils/colors';
 
 const Card = styled.a`
-  width: 20%;
+  width: 350px;
   margin: 30px 15px;
   padding-bottom: 50px;
 
@@ -38,7 +38,7 @@ const CardTitle = styled.h3`
 
 const CardParagraph = styled.p`
   font-size: 15px;
-  color: ${colors.themeGray};
+  color: ${colors.themeParagraphColor};
 `;
 
 const CardButton = styled.div`
