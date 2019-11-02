@@ -1,17 +1,6 @@
 import React from 'react';
 
-import { Header } from 'semantic-ui-react';
+const NotFound = () =>
+	<h1>Page not found</h1>
 
-function NotFound() {
-    return (
-        <>
-            <Header as="h1">Not Found</Header>
-
-            Page not found
-        </>
-    );
-}
-
-export {
-    NotFound as default,
-};
+export default NotFound;
