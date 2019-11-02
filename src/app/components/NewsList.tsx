@@ -1,26 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 import NewsBox from './NewsBox';
+import Loader from './Loader';
+
 import { getNews } from '../services/api';
 
+const NewsListWrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const LoaderContent = styled.div`
+	height: 80vh;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
 function NewsList(props) {
-    const [news, setNews] = useState();
-    const newsBoxes = news && news.map((article, index) => <NewsBox article={article} key={index} />)
+	const [news, setNews] = useState();
+	const [isLoading, setIsLoading] = useState(false);
+	const newsBoxes = news && news.map((article, index) => <NewsBox article={article} key={index} />)
 
-    useEffect(() => {
-        getNews(props.category, props.country).then(({articles}) => {
-            setNews(articles);
-        });
-    },[props.category, props.country]);
+	useEffect(() => {
+		setIsLoading(true);
+		getNews(props.category, props.country).then(({articles}) => {
+			setNews(articles);
+			setIsLoading(false);
+		});
+	},[props.category, props.country]);
 
-    
 
-    return (
-        <Card.Group centered itemsPerRow={3}>
-            {newsBoxes}
-        </Card.Group>
-    );
+
+	return (
+		isLoading ?
+			<LoaderContent>
+				<Loader />
+			</LoaderContent>
+		:
+			<NewsListWrapper>
+				{newsBoxes}
+			</NewsListWrapper>
+	);
 }
 
 export default NewsList;
