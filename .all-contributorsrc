@@ -15,6 +15,15 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "yusfgungor",
+      "name": "Yusuf Güngör",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/40248363?v=4",
+      "profile": "http://www.yusufgungor.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
