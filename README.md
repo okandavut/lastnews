@@ -16,7 +16,7 @@ You can check the top trend news in Turkey with Turk-Haber.
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 <table>
   <tr>
-       <td align="center"><a href="https://medium.com/@okandavut"><img src="https://avatars3.githubusercontent.com/u/10600157?v=4" width="100px;" alt=""/><br /><sub><b>Okan DAVUT</b></sub></a><br /><a href="https://github.com/nadchif/adobe-brackets-encode-decode/commits?author=okandavut" title="Code">💻</a> <a href="#maintenance-nadchif" title="Maintenance">🚧</a></td>
+       <td align="center"><a href="https://medium.com/@okandavut"><img src="https://avatars3.githubusercontent.com/u/10600157?v=4" width="100px;" alt=""/><br /><sub><b>Okan DAVUT</b></sub></a><br /><a href="https://github.com/okandavut/turk-haber/commits?author=okandavut" title="Code">💻</a> <a href="#maintenance-nadchif" title="Maintenance">🚧</a></td>
        </tr>
 </table>
 
