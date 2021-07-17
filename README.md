@@ -1,12 +1,10 @@
-# Türkçe Basit Haber Listesi
+# Simple News List Application Made with React
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
-https://turk-haber-test.herokuapp.com/
-
-You can check the top trend news in Turkey with Turk-Haber.
+You can check the top trend news in different countries with different categories.
 ![Alt Text](./public/readme-screenshot.png)
 
 
