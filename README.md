@@ -7,7 +7,7 @@
 You can check the top trend news in different countries with different categories.
 ![Alt Text](./public/readme-screenshot.png)
 
-### 2. Installation and Running
+## Installation and Running
 
 On the command prompt run the following commands
 
