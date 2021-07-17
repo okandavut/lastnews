@@ -7,7 +7,23 @@
 You can check the top trend news in different countries with different categories.
 ![Alt Text](./public/readme-screenshot.png)
 
+### 2. Installation and Running
 
+On the command prompt run the following commands
+
+```sh
+$ git clone https://github.com/okandavut/lastnews.git
+
+$ cd lastnews/
+
+$ npm install
+  or
+  yarn install
+  
+ $ yarn dev 
+  or
+  npm start dev  
+```
 
 ## Contributors ✨
 
