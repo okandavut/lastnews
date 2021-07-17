@@ -1,4 +1,4 @@
-## LastNews is Simple News List Application Made with React
+### LastNews is Simple News List Application Made with React
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -7,7 +7,8 @@
 You can check the top trend news in different countries with different categories.
 ![Alt Text](./public/readme-screenshot.png)
 
-## Installation and Running
+
+### Installation and Running
 
 On the command prompt run the following commands
 
@@ -25,7 +26,15 @@ $ npm install
   npm start dev  
 ```
 
-## Contributors ✨
+### Technologies
+
+- [NextJS](https://nextjs.org/)
+- [React](https://en.reactjs.org/)
+- [Fetch Api](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Styled-Components](https://styled-components.com/)
+
+
+### Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 <table>
